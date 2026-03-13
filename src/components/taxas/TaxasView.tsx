@@ -99,7 +99,9 @@ export function TaxasView() {
 						<TableHeader>
 							<TableRow>
 								<TableHead className="w-[100px]">Taxa</TableHead>
-								<TableHead className="hidden md:table-cell">Descrição</TableHead>
+								<TableHead className="hidden md:table-cell">
+									Descrição
+								</TableHead>
 								<TableHead className="text-right">Valor (% a.a.)</TableHead>
 								<TableHead className="text-right hidden sm:table-cell">
 									Classificação
@@ -111,7 +113,8 @@ export function TaxasView() {
 								<TableRow key={taxa.nome}>
 									<TableCell className="font-medium">{taxa.nome}</TableCell>
 									<TableCell className="text-xs text-[hsl(var(--muted-foreground))] hidden md:table-cell">
-										{DESCRIPTIONS[taxa.nome.toUpperCase()] || 'Taxa oficial de referência.'}
+										{DESCRIPTIONS[taxa.nome.toUpperCase()] ||
+											'Taxa oficial de referência.'}
 									</TableCell>
 									<TableCell className="text-right font-mono font-semibold">
 										{taxa.valor.toFixed(2)}%

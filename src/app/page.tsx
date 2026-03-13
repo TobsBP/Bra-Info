@@ -107,11 +107,10 @@ export default async function HomePage() {
 								className="flex items-center justify-between py-2 border-b last:border-0"
 							>
 								<div className="flex flex-col gap-0.5 min-w-0">
-									<span className="text-sm font-medium">
-										{t.nome}
-									</span>
+									<span className="text-sm font-medium">{t.nome}</span>
 									<span className="text-xs text-[hsl(var(--muted-foreground))] truncate">
-										{descriptions[t.nome.toUpperCase()] || 'Taxa de referência.'}
+										{descriptions[t.nome.toUpperCase()] ||
+											'Taxa de referência.'}
 									</span>
 								</div>
 								<span className="font-mono font-semibold text-sm tabular-nums">

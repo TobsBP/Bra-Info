@@ -1,7 +1,14 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Briefcase, HelpCircle, Info, MapPin, Receipt, Users } from 'lucide-react';
+import {
+	Briefcase,
+	HelpCircle,
+	Info,
+	MapPin,
+	Receipt,
+	Users,
+} from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -83,13 +90,17 @@ export function CnpjSearchForm() {
 						</CardHeader>
 						<CardContent className="text-sm space-y-3 text-[hsl(var(--muted-foreground))]">
 							<p>
-								O CNPJ tem 14 dígitos. O formato é <strong>00.000.000/0001-00</strong>.
+								O CNPJ tem 14 dígitos. O formato é{' '}
+								<strong>00.000.000/0001-00</strong>.
 							</p>
 							<p>
-								Os números após a barra (<strong>0001</strong>) indicam se é a <strong>Matriz</strong> ou uma <strong>Filial</strong>. Geralmente, 0001 é a sede principal.
+								Os números após a barra (<strong>0001</strong>) indicam se é a{' '}
+								<strong>Matriz</strong> ou uma <strong>Filial</strong>.
+								Geralmente, 0001 é a sede principal.
 							</p>
 							<p>
-								Os dois últimos dígitos são <strong>Verificadores</strong>, calculados matematicamente para evitar erros de digitação.
+								Os dois últimos dígitos são <strong>Verificadores</strong>,
+								calculados matematicamente para evitar erros de digitação.
 							</p>
 						</CardContent>
 					</Card>
@@ -104,15 +115,21 @@ export function CnpjSearchForm() {
 						<CardContent className="text-sm space-y-2">
 							<div className="flex justify-between items-center">
 								<span className="font-medium">MEI</span>
-								<span className="text-xs text-[hsl(var(--muted-foreground))]">Faturamento até R$ 81k/ano</span>
+								<span className="text-xs text-[hsl(var(--muted-foreground))]">
+									Faturamento até R$ 81k/ano
+								</span>
 							</div>
 							<div className="flex justify-between items-center">
 								<span className="font-medium">ME (Microempresa)</span>
-								<span className="text-xs text-[hsl(var(--muted-foreground))]">Até R$ 360k/ano</span>
+								<span className="text-xs text-[hsl(var(--muted-foreground))]">
+									Até R$ 360k/ano
+								</span>
 							</div>
 							<div className="flex justify-between items-center">
 								<span className="font-medium">EPP</span>
-								<span className="text-xs text-[hsl(var(--muted-foreground))]">Até R$ 4,8 milhões/ano</span>
+								<span className="text-xs text-[hsl(var(--muted-foreground))]">
+									Até R$ 4,8 milhões/ano
+								</span>
 							</div>
 							<p className="text-[10px] pt-2 text-[hsl(var(--muted-foreground))] italic">
 								* Valores baseados no Simples Nacional.
@@ -199,7 +216,9 @@ export function CnpjSearchForm() {
 							<CardContent className="space-y-4">
 								<div className="flex items-center justify-between py-2 border-b last:border-0">
 									<span className="text-sm font-medium">Simples Nacional</span>
-									<Badge variant={data.opcao_pelo_simples ? 'default' : 'secondary'}>
+									<Badge
+										variant={data.opcao_pelo_simples ? 'default' : 'secondary'}
+									>
 										{data.opcao_pelo_simples ? 'Optante' : 'Não optante'}
 									</Badge>
 								</div>
@@ -213,8 +232,12 @@ export function CnpjSearchForm() {
 								)}
 
 								<div className="flex items-center justify-between py-2 border-b last:border-0">
-									<span className="text-sm font-medium">MEI (Microempreendedor)</span>
-									<Badge variant={data.opcao_pelo_mei ? 'default' : 'secondary'}>
+									<span className="text-sm font-medium">
+										MEI (Microempreendedor)
+									</span>
+									<Badge
+										variant={data.opcao_pelo_mei ? 'default' : 'secondary'}
+									>
 										{data.opcao_pelo_mei ? 'Sim' : 'Não'}
 									</Badge>
 								</div>
@@ -238,10 +261,22 @@ export function CnpjSearchForm() {
 							</CardHeader>
 							<CardContent className="space-y-3">
 								{[
-									{ label: 'Natureza Jurídica', value: `${data.codigo_natureza_juridica} - ${data.natureza_juridica}` },
-									{ label: 'Porte', value: `${data.codigo_porte} - ${data.porte}` },
-									{ label: 'Ente Federativo', value: data.ente_federativo_responsavel },
-									{ label: 'Situação', value: `${data.codigo_situacao_cadastral} - ${data.descricao_situacao_cadastral}` },
+									{
+										label: 'Natureza Jurídica',
+										value: `${data.codigo_natureza_juridica} - ${data.natureza_juridica}`,
+									},
+									{
+										label: 'Porte',
+										value: `${data.codigo_porte} - ${data.porte}`,
+									},
+									{
+										label: 'Ente Federativo',
+										value: data.ente_federativo_responsavel,
+									},
+									{
+										label: 'Situação',
+										value: `${data.codigo_situacao_cadastral} - ${data.descricao_situacao_cadastral}`,
+									},
 								].map(({ label, value }) =>
 									value && !value.includes('null') ? (
 										<div key={label} className="flex flex-col gap-1">
