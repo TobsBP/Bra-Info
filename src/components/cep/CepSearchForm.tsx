@@ -35,12 +35,14 @@ export function CepSearchForm() {
 
 	const onSubmit = (formData: FormData) => setActiveCep(formData.cep);
 
-	const coords = data?.location?.coordinates?.latitude
-		? {
-				latitude: data.location.coordinates.latitude,
-				longitude: data.location.coordinates.longitude,
-			}
-		: null;
+	const coords =
+		data?.location?.coordinates?.latitude &&
+		data?.location?.coordinates?.longitude
+			? {
+					latitude: data.location.coordinates.latitude,
+					longitude: data.location.coordinates.longitude,
+				}
+			: null;
 
 	const popupLabel = data
 		? [data.street, data.city, data.state].filter(Boolean).join(', ')
