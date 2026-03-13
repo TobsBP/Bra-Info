@@ -1,0 +1,58 @@
+{
+	"name": "brasil-dashboard",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "biome check src",
+		"format": "biome format --write src",
+		"check": "biome check --write src",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"@hookform/resolvers": "^3",
+		"@radix-ui/react-dialog": "^1",
+		"@radix-ui/react-label": "^2",
+		"@radix-ui/react-popover": "^1",
+		"@radix-ui/react-scroll-area": "^1",
+		"@radix-ui/react-select": "^2",
+		"@radix-ui/react-separator": "^1",
+		"@radix-ui/react-slot": "^1",
+		"@radix-ui/react-tabs": "^1",
+		"@radix-ui/react-tooltip": "^1",
+		"@tanstack/react-query": "^5",
+		"axios": "^1",
+		"class-variance-authority": "^0.7",
+		"clsx": "^2",
+		"cmdk": "^1",
+		"date-fns": "^3",
+		"leaflet": "^1.9.4",
+		"lucide-react": "^0.460",
+		"next": "^15",
+		"react": "^19",
+		"react-dom": "^19",
+		"react-hook-form": "^7",
+		"react-leaflet": "^5.0.0",
+		"recharts": "^2",
+		"tailwind-merge": "^2",
+		"zod": "^3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.6",
+		"@tailwindcss/postcss": "^4.2.1",
+		"@tanstack/react-query-devtools": "^5",
+		"@types/leaflet": "^1.9.21",
+		"@types/node": "^22",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.3.3",
+		"tailwindcss": "^4",
+		"typescript": "^5"
+	},
+	"lint-staged": {
+		"*": "biome check --write --no-errors-on-unmatched"
+	}
+}
