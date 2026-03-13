@@ -1,0 +1,16 @@
+import { type NextRequest, NextResponse } from 'next/server';
+
+const BASE =
+	process.env.PARALLELUM_URL ?? 'https://parallelum.com.br/fipe/api/v1';
+
+export async function GET(
+	_req: NextRequest,
+	{ params }: { params: Promise<{ tipo: string; marca: string }> },
+) {
+	const { tipo, marca } = await params;
+	const res = await fetch(`${BASE}/${tipo}/marcas/${marca}/modelos`, {
+		next: { revalidate: 86400 },
+	});
+	const data = await res.json();
+	return NextResponse.json(data, { status: res.status });
+}
